@@ -1,37 +1,28 @@
 const express = require('express');
 const Agent = require('../models/agentsModel');
+const {
+    createAgent,
+    getAgents,
+    getAgent,
+    deleteAgent,
+    updateAgent
+}= require('../controllers/agentControllers');
 
 const router = express.Router();
 
 // Get all agents
-router.get('/', (req, res) => {
-    res.json({messg: 'GET all agents'});
-});
+router.get('/', getAgents);
 
 // Get a singlt agent
-router.get('/:id', (req, res) => {
-    res.json({mssg: 'Get a single agent'})
-});
+router.get('/:id', getAgent);
 
 // Post a new agent
-router.post('/', async (req, res) => {
-    const {name, age, phoneNumber, numberOfProperties} = req.body;
+router.post('/', createAgent);
 
-    try{
-        const agent = await Agent.create({name, age, phoneNumber, numberOfProperties});
-        res.status(200).json(agent)
-    }catch(error){
-        res.status(400).json({error: error.message})
-    }
-});
 // Delete an agent
-router.delete('/:id', (req, res) => {
-    res.json({mssg: 'DELETE an agent'});
-});
+router.delete('/:id', deleteAgent);
 
 // Update an agent
-router.patch('/:id', (req, res) => {
-    res.json({mssg: 'UPDATE an agent'});
-});
+router.patch('/:id', updateAgent);
 
 module.exports = router;

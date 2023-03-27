@@ -1,7 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 const express = require('express');
-const routes = require('./routes');
+const routes = require('./routes/agents');
 
 // Start express
 const app = express();

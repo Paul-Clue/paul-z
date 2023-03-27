@@ -1,12 +1,12 @@
 const express = require('express');
-const Agent = require('../models/agentsModel');
+const Agent = require('../../models/agentsModel');
 const {
     createAgent,
     getAgents,
     getAgent,
     deleteAgent,
     updateAgent
-}= require('../controllers/agentControllers');
+}= require('../../controllers/agentControllers');
 
 const router = express.Router();
 
@@ -23,6 +23,7 @@ router.post('/', createAgent);
 router.delete('/:id', deleteAgent);
 
 // Update an agent
-router.patch('/:id', updateAgent);
+// router.patch('/:id', updateAgent);
+router.put('/:id', updateAgent);
 
 module.exports = router;

@@ -13,7 +13,7 @@ const getAgent = async (req, res) => {
   const {id} = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No agent with that ID'});
+    return res.status(404).json({error: 'This one is firing'});
   }
 
   const agent = await Agent.findById(id);

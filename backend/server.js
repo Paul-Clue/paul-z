@@ -1,8 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 const express = require('express');
-const agentRoutes = require('./routes/agent');
-
+const routes = require('./routes/agents');
 
 // Start express
 const app = express();
@@ -15,12 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Routes
-// app.get('/', (req, res) => {
-//     res.json({messg: 'Testing!!'})
-// });
-
-app.use('/api/agents', agentRoutes);
+app.use('/api', routes);
 
 // Connect to DB
 mongoose.connect(process.env.MONGO_URI)

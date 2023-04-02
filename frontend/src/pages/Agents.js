@@ -3,17 +3,21 @@ import { useEffect, useState } from 'react';
 const Agents = () => {
   const [agents, setAgents] = useState(null);
 
+  // TODO: Also look into useLayoutEffect
+
   useEffect(() => {
     const fetchAgents = async () => {
-      const response = await fetch('/api')
-      const json = response.json();
+      const response = await fetch('/api/agents')
+      const json = await response.json();
 
       if (response.ok) {
         setAgents(json);
       }
     }
 
-    fetchAgents();
+    (async () => {
+      await fetchAgents()
+    })()
   }, []);
 
   return (
@@ -21,7 +25,7 @@ const Agents = () => {
       <h1>Agents</h1>
       <div className="agentList">
         {agents && agents.map((agent) => (
-          <p key={agent._id}>{agent.title}</p>
+          <p key={agent._id}>{agent.name}</p>
         ))}
       </div>
     </div>

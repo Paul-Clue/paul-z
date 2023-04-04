@@ -1,4 +1,5 @@
 // import { useEffect, useState } from 'react';
+import AddProperty from '../components/AddProperties'
 
 const Home = () => {
   // const [agents, setAgents] = useState(null);
@@ -19,6 +20,7 @@ const Home = () => {
   return (
     <div className='home'>
       <h1>HOME</h1>
+      <AddProperty />
     </div>
   )
 }

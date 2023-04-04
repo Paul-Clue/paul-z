@@ -4,6 +4,7 @@ const HousesForSale = () => {
   const [housesForSale, setHousesForSale] = useState(null);
 
   // TODO: Also look into useLayoutEffect
+  // TODO: Create Houses For Sale Component To Show Houses On Cards
 
   useEffect(() => {
     const fetchHousesForSale = async () => {

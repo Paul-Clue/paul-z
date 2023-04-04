@@ -1,7 +1,9 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 const express = require('express');
-const routes = require('./routes/agents');
+const routes = require('./routes');
+
+// TODO: Look into seeding dummy data MongoDB with Mongoose
 
 // Start express
 const app = express();
@@ -10,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-    console.log(req.path, req.method);
+    // console.log(req.path, req.method);
     next();
 });
 

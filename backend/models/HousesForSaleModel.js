@@ -1,23 +1,23 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const agentSchema = new Schema({
-  name: {
+const housesForSaleSchema = new Schema({
+  address: {
     type: String,
     required: true
   },
-  age: {
+  numberOfBedrooms: {
     type: Number,
     required: true
   },
-  phoneNumber: {
+  numberOfBathrooms: {
     type: Number,
     required: true
   },
-  numberOfProperties: {
+  price: {
     type: Number,
     required: true
   },
 }, {timestamps: true});
 
-module.exports = mongoose.model('agent', agentSchema)
+module.exports = mongoose.model('houseForSale', housesForSaleSchema)

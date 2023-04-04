@@ -1,6 +1,6 @@
 const app = require('express').Router();
 
-const agents = require('./agents');
+const housesForSale = require('./houseForSale');
 // const users = require('./users')
 
 // Middleware example
@@ -13,6 +13,6 @@ app.get('*', (req, res, next) => {
     next();
 })
 
-app.use('/agents', agents)
+app.use('/housesForSale', housesForSale)
 
 module.exports = app;

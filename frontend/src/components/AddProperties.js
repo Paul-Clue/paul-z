@@ -16,7 +16,7 @@ const AddProperties = () => {
     const response = await fetch('api/housesForSale', {
       method: 'POST',
       body: JSON.stringify(property),
-      header: {
+      headers: {
         'Content-Type': 'application/json'
       }
     });

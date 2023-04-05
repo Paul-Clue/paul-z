@@ -6,11 +6,11 @@ const housesForSaleSchema = new Schema({
     type: String,
     required: true
   },
-  numberOfBedrooms: {
+  bedrooms: {
     type: Number,
     required: true
   },
-  numberOfBathrooms: {
+  bathrooms: {
     type: Number,
     required: true
   },

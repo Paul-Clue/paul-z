@@ -28,11 +28,11 @@ const getHouseForSale = async (req, res) => {
 
 // Create a house that's for sale
 const createHouseForSale = async (req, res) => {
-  const {address, numberOfBedrooms, numberOfBathrooms, price} = req.body;
+  const {address, bedrooms, bathrooms, price} = req.body;
 
   // Add doc to db  
   try{
-    const houseForSale = await HouseForSale.create({address, numberOfBedrooms, numberOfBathrooms, price});
+    const houseForSale = await HouseForSale.create({address, bedrooms, bathrooms, price});
     res.status(200).json(houseForSale)
   }catch(error){
     res.status(400).json({error: error.message})

@@ -1,10 +1,10 @@
-const {MongoClient} = require('mongodb');
+const {MongoClient} = require("mongodb");
 
 
 
 module.exports = {
-    connectToDb: () => {
-        MongoClient.connect('mongodb://localhost:27017/')
-    },
-    getDb: () => {}
+  connectToDb: () => {
+    MongoClient.connect("mongodb://localhost:27017/")
+  },
+  getDb: () => {}
 }

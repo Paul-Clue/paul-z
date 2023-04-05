@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 const housesForSaleSchema = new Schema({
@@ -20,4 +20,4 @@ const housesForSaleSchema = new Schema({
   },
 }, {timestamps: true});
 
-module.exports = mongoose.model('houseForSale', housesForSaleSchema)
+module.exports = mongoose.model("houseForSale", housesForSaleSchema)

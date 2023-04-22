@@ -2,6 +2,8 @@ import { useState } from "react";
 import { json } from "react-router-dom";
 
 const AddProperties = () => {
+  const [ propertyType, setPropertyType] = useState('');
+  const [ saleType, setSaleType] = useState('');
   const [ address, setAddress] = useState('');
   const [ bedrooms, setBedrooms] = useState('');
   const [ bathrooms, setBathrooms] = useState('');
@@ -11,7 +13,7 @@ const AddProperties = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const property = {address, bedrooms, bathrooms, price}
+    const property = {propertyType, saleType, address, bedrooms, bathrooms, price}
 
     const response = await fetch('api/housesForSale', {
       method: 'POST',
@@ -28,6 +30,8 @@ const AddProperties = () => {
     }
 
     if (response.ok) {
+      setPropertyType('');
+      setSaleType('');
       setAddress('');
       setBedrooms('');
       setBathrooms('');
@@ -40,6 +44,20 @@ const AddProperties = () => {
   return (
     <form className='addProperty' onSubmit={handleSubmit}>
       <h3>Add A New Property</h3>
+
+      <label>Type Of Property:</label>
+      <input 
+        type='text'
+        onChange={(e) => setPropertyType(e.target.value)}
+        value={address}
+      />
+
+      <label>Type Of Sale:</label>
+      <input 
+        type='text'
+        onChange={(e) => setSaleType(e.target.value)}
+        value={address}
+      />
 
       <label>Address:</label>
       <input 

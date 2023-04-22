@@ -1,13 +1,20 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-const housesForSaleSchema = new Schema({
+const propertySchema = new Schema({
+  propertyType: {
+    type: String,
+    required: true
+  },
+  saleType: {
+    type: String,
+    required: true
+  },
   address: {
     type: String,
     required: true
   },
   bedrooms: {
-    type: Number,
     required: true
   },
   bathrooms: {
@@ -20,4 +27,4 @@ const housesForSaleSchema = new Schema({
   },
 }, {timestamps: true});
 
-module.exports = mongoose.model("houseForSale", housesForSaleSchema)
+module.exports = mongoose.model("property", propertySchema)

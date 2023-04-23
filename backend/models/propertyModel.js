@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const agentModel = require("./agentModel");
 
 const Schema = mongoose.Schema;
 const propertySchema = new Schema({
@@ -25,6 +26,11 @@ const propertySchema = new Schema({
     type: Number,
     required: true
   },
+  agent: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: agentModel,
+    required: true
+  }
 }, {timestamps: true});
 
 module.exports = mongoose.model("property", propertySchema)

@@ -16,6 +16,7 @@ const propertySchema = new Schema({
     required: true
   },
   bedrooms: {
+    type: String,
     required: true
   },
   bathrooms: {

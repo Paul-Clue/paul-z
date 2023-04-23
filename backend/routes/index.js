@@ -1,6 +1,6 @@
 const app = require("express").Router();
 
-const properies = require("./properties");
+const properties = require("./properties");
 const agents = require("./agents");
 // const users = require('./users')
 
@@ -14,7 +14,7 @@ app.get("*", (req, res, next) => {
   next();
 })
 
-app.use("/properies", properies);
+app.use("/properties", properties);
 app.use("/agents", agents);
 
 module.exports = app;

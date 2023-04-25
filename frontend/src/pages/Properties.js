@@ -8,6 +8,7 @@ const Properties = () => {
     const fetchProperties = async () => {
       const response = await fetch('/api/properties')
       const json = await response.json();
+      console.log(json);
 
       if (response.ok) {
         setProperties(json);
@@ -24,7 +25,7 @@ const Properties = () => {
       <h1>Available Properties</h1>
       <div className="housesForSaleList">
         {properties && properties.map((property) => (
-          <p key={property._id}>{property.price}</p>
+          <p key={property._id}>{property.address}: {property.price}</p>
         ))}
       </div>
     </div>

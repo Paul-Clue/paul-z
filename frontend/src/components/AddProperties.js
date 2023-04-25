@@ -15,7 +15,7 @@ const AddProperties = () => {
 
     const property = {propertyType, saleType, address, bedrooms, bathrooms, price}
 
-    const response = await fetch('api/housesForSale', {
+    const response = await fetch('api/properties', {
       method: 'POST',
       body: JSON.stringify(property),
       headers: {
@@ -49,14 +49,14 @@ const AddProperties = () => {
       <input 
         type='text'
         onChange={(e) => setPropertyType(e.target.value)}
-        value={address}
+        value={propertyType}
       />
 
       <label>Type Of Sale:</label>
       <input 
         type='text'
         onChange={(e) => setSaleType(e.target.value)}
-        value={address}
+        value={saleType}
       />
 
       <label>Address:</label>

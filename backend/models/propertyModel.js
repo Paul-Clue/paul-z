@@ -30,7 +30,7 @@ const propertySchema = new Schema({
   agent: {
     type: mongoose.Schema.Types.ObjectId,
     ref: agentModel,
-    required: true
+    // required: true
   }
 }, {timestamps: true});
 

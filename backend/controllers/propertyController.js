@@ -1,5 +1,5 @@
 const Property = require("../models/propertyModel");
-const agentModel = require("../models/agentModel");
+// const agentModel = require("../models/agentModel");
 const mongoose = require("mongoose");
 
 // Get all properties
@@ -37,7 +37,8 @@ const createProperty = async (req, res) => {
     const property = await Property.create({propertyType, saleType, address, bedrooms, bathrooms, price});
     res.status(200).json(property)
   }catch(error){
-    res.status(400).json({error: error.message})
+    // res.status(400).json({error: error.message});
+    res.status(400).json({error: error.message});
   }
 }
 

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages and components
 import Home from './pages/Home';
-import HousesForSale from './pages/Properties';
+import Properties from './pages/Properties';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
               element={<Home />}
             />
             <Route 
-              path="/housesForSale"
-              element={<HousesForSale />}
+              path="/properties"
+              element={<Properties />}
             />
           </Routes>
         </div>

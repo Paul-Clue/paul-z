@@ -5,7 +5,7 @@ const Login = () => {
     <div>
       <h1>LOGIN</h1>
       <h2>Sign in</h2>
-      <form action="/api/login/password" method="post">
+      <form action="/api/auth/login/password" method="post">
           <section>
               <label for="username">Username</label>
               <input id="username" name="username" type="text" autocomplete="username" required autofocus />

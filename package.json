@@ -6,11 +6,15 @@
   "scripts": {
     "lint": "eslint \"**/*.{js,jsx}\"",
     "lint:fix": "eslint \"**/*.{js,jsx}\" --fix"
-}, 
+  },
   "devDependencies": {
     "eslint": "^8.37.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2"
+  },
+  "dependencies": {
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
   }
 }

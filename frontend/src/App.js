@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Properties from './pages/Properties';
 import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import Manager from './pages/Manager';
 
 function App() {
   return (
@@ -19,6 +21,18 @@ function App() {
             <Route 
               path="/properties"
               element={<Properties />}
+            />
+            <Route 
+              path="/properties/admin"
+              element={<Login />}
+            />
+            <Route 
+              path="/login/password"
+              element={<Login />}
+            />
+            <Route 
+              path="/manager"
+              element={<Manager />}
             />
           </Routes>
         </div>

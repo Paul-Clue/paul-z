@@ -2,6 +2,7 @@ const app = require("express").Router();
 
 const properties = require("./properties");
 const agents = require("./agents");
+const auth = require("./auth");
 // const users = require('./users')
 
 // Middleware example
@@ -16,5 +17,6 @@ app.get("*", (req, res, next) => {
 
 app.use("/properties", properties);
 app.use("/agents", agents);
+app.use("/auth", auth);
 
 module.exports = app;

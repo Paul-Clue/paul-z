@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 // Get all properties
 const getProperties = async (req, res) => {
   // const properties = await Property.find({}).sort({createdat: -1});
-  const properties = await Property.find({}).populate('agent').sort({createdat: -1});
+  const properties = await Property.find({}).populate("agent").sort({createdat: -1});
 
   res.status(200).json(properties);
 }

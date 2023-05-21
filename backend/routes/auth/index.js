@@ -1,13 +1,22 @@
-const express = require('express');
-
+const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
-router.post('/login/password', (req, res) => {
-  console.log(req.headers);
-  res.redirect('/manager');
+router.post("/register_login", (req, res, next) => {
+  passport.authenticate("local", function(err, user) {
+    if (err) {
+      return res.status(400).json({ errors: err });
+    }
+    if (!user) {
+      return res.status(400).json({ errors: "No user found" });
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        return res.status(400).json({ errors: err });
+      }
+      return res.status(200).json({ success: `logged in ${user.id}` });
+    });
+  })(req, res, next);
 });
 
 module.exports = router;

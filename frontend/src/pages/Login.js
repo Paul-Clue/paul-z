@@ -7,12 +7,12 @@ const Login = () => {
       <h2>Sign in</h2>
       <form action="/api/auth/login/password" method="post">
           <section>
-              <label for="username">Username</label>
-              <input id="username" name="username" type="text" autocomplete="username" required autofocus />
+              <label htmlFor="username">Username</label>
+              <input id="username" name="username" type="text" autoComplete="username" required autoFocus />
           </section>
           <section>
-              <label for="current-password">Password</label>
-              <input id="current-password" name="password" type="password" autocomplete="current-password" required />
+              <label htmlFor="current-password">Password</label>
+              <input id="current-password" name="password" type="password" autoComplete="current-password" required />
           </section>
           <button type="submit">Sign in</button>
       </form>

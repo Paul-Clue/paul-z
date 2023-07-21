@@ -1,24 +1,26 @@
+const express = require("express");
 const app = require("express").Router();
+const path = require("path");
 
 // const logger = require("morgan");
 const passport = require("passport");
-// const session = require("express-session");
-// const MongoStore = require("connect-mongo");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
 const properties = require("./properties");
 const agents = require("./agents");
-const auth = require("./auth");
+const auth = require("./auth/auth");
 
 // const users = require('./users')
 
 // Middleware example
-// app.use(express.static(path.join(__dirname, "public")));
-// app.use(session({
-//   secret: 'keyboard cat',
-//   resave: false,
-//   saveUninitialized: false,
-//   store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/' })
-// }));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(session({
+  secret: "keyboard cat",
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/" })
+}));
 app.use(passport.authenticate("session"));
 
 app.get("*", (req, res, next) => {

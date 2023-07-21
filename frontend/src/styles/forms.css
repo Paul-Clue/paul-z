@@ -1,0 +1,30 @@
+.form-wrapper {
+  height: 100vh;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: space-between; */
+}
+
+.add-property {
+  /* background-color: red; */
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
+}
+
+.add-agent {
+  /* background-color: red; */
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35%;
+}
+
+.address-set {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid grey
+}
